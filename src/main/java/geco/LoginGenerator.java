@@ -39,6 +39,7 @@ public class LoginGenerator {
         String login = p+n ;
         if (loginService.loginExists(login)) {
             login = login + "1" ;
+
         }
         loginService.addLogin(login);
         return login;

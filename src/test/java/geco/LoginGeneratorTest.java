@@ -1,25 +1,23 @@
 package geco;
 
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.runner.RunWith;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-@RunWith(Arquillian.class)
 public class LoginGeneratorTest {
-    @org.junit.Test
-    public void generateLoginForNomAndPrenom() throws Exception {
-    }
 
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(LoginGenerator.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-    }
+    String nomL = "Tureau",
+        prenomL = "Laëtitia",
+        nomR = "Andriamiseza",
+        prenomR = "Rialy";
+
+    /* Initialisation du login generator
+    LoginGenerator lTest = new LoginGenerator()
+
+    @Test
+    public void testGenerateLoginForNomAndPrenom() throws Exception {
+        String sTest = LoginGenerator.generateLoginForNomAndPrenom(nomL, prenomL);
+    }*/
+
 
 }
