@@ -36,6 +36,22 @@ public class LoginGeneratorTest {
     }
 
     @Test
+    public void testJeanRolling() throws Exception {
+        l = new LoginService(new String[]{"JROL", "BPER", "CGUR",  "JDUP", "JRAL", "JRAL1"});
+        LoginGenerator lTest = new LoginGenerator(l);
+        String sTest = lTest.generateLoginForNomAndPrenom("Rolling", "Jean");
+        assertThat(sTest, is("JROL1"));
+    }
+
+    @Test
+    public void testPaulDurandAcent() throws Exception {
+        l = new LoginService(new String[]{"JROL", "BPER", "CGUR",  "JDUP", "JRAL", "JRAL1"});
+        LoginGenerator lTest = new LoginGenerator(l);
+        String sTest = lTest.generateLoginForNomAndPrenom("Dùrand", "Paul");
+        assertThat(sTest, is("PDUR"));
+    }
+
+    @Test
     public void testJRAL2() throws Exception {
         l = new LoginService(new String[]{"JROL", "BPER", "CGUR",  "JDUP", "JRAL", "JRAL1"});
         LoginGenerator lTest = new LoginGenerator(l);
