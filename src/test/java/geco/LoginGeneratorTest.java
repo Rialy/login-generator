@@ -58,4 +58,12 @@ public class LoginGeneratorTest {
         String sTest = lTest.generateLoginForNomAndPrenom("Ralling", "John");
         assertThat(sTest, is("JRAL2"));
     }
+
+    @Test
+    public void character3() throws Exception {
+        l = new LoginService(new String[]{"JROL", "BPER", "CGUR",  "JDUP", "JRAL", "JRAL1"});
+        LoginGenerator lTest = new LoginGenerator(l);
+        String sTest = lTest.generateLoginForNomAndPrenom("Du", "Paul");
+        assertThat(sTest, is("PDU"));
+    }
 }
